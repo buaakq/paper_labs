@@ -5,7 +5,7 @@ import os
 import signal
 import time
 from optparse import OptionParser
-from elfpatch import elfpatch
+from elfbin import elfbin
 
 
 def signal_handler(signal, frame):
@@ -32,9 +32,10 @@ def main():
     parser.add_option("-f", "--file", dest="FILE", action="store",
                       type="string",
                       help="File to patch")
-    parser.add_option("-t", "--object_file", default=False,
-                      dest="OBJECT_FILE", action="store",
-                      help="Get text section and  add it to out file")
+    parser.add_option("-a", "--add_new_section", default=False,
+                      dest="ADD_SECTION", action="store_true",
+                      help="Mandating that a new section be added to the "
+                      "exe (better success) but less av avoidance")
     parser.add_option("-s", "--shellcode", type="string",
                       dest="SHELLCODE", action="store",
                       help="User supplied shellcode, make sure that it matches"
@@ -52,7 +53,7 @@ def main():
                       help="For debug information output.")
 
     (options, args) = parser.parse_args()
-    if not options.FILE or (not options.SHELLCODE and not options.OBJECT_FILE):
+    if not options.FILE or not options.SHELLCODE:
         parser.print_help()
         sys.exit(1)
     if not options.OUTPUT:
@@ -62,13 +63,13 @@ def main():
     if is_supported != 'ELF':
         print >>sys.stderr,"file not supported!\n"
         sys.exit(1)
-    elfp = elfpatch(options.FILE,
+    elf = elfbin(options.FILE,
                 options.OUTPUT,
-                options.SHELLCODE,
-                options.OBJECT_FILE)
-    result = elfp.patch_elf()
+                options.SHELLCODE)
+    result = elf.patch_elf()
     if result is True:
         print "Patched File: {0}".format(options.OUTPUT)
+
 
 if __name__ == "__main__":
     main()
