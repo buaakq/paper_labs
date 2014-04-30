@@ -14,7 +14,10 @@ foo:
     push   ebp
     mov    ebp,esp
     sub    esp,0x18
-    push   0x316f6f66 ;foo1
+
+    push   0x00
+    push   0x316f6f66
+    ;push   0x316f6f66 ;foo1
     ;lea    eax,[esp]
     ;push   eax
     push   esp

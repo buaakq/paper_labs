@@ -73,8 +73,8 @@ def main():
     (entry,inject_point) = elfp.patch_elf()
     file_offset = inject_point - 0x08048000
     print "[+] Patched File: {0}".format(options.OUTPUT)
-    print "[+] Patched inject_point: {0:#x} file Offset: {1:#x}".format(inject_point,
-        file_offset)
+    print "[+] Patched inject_point: {0:#x} file Offset: {1:#x}".format(inject_point,file_offset)
+
     funcs = parse_text_section(options.OUTPUT)
     offset = int(funcs['<main>']['offset'],16)
     file_offset = offset - 0x08048000
