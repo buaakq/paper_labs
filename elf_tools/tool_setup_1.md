@@ -109,7 +109,7 @@ Options:
                         sure that it matches the architecture that you are
                         targeting.
   -i INJECT_INS, --inject_ins=INJECT_INS
-                        inject instruction into func's prolog
+                        inject instruction into functions prolog
   -o OUTPUT, --output-file=OUTPUT
                         The backdoor output file
   -n NSECTION, --section=NSECTION
