@@ -24,8 +24,6 @@ def basicDiscovery(FILE):
         'Only support ELF formats'
         return None
 
-
-
 def main():
     signal.signal(signal.SIGINT, signal_handler)
 
@@ -47,10 +45,7 @@ def main():
     parser.add_option("-o", "--output-file", default=None, dest="OUTPUT",
                       action="store", type="string",
                       help="The backdoor output file")
-    parser.add_option("-n", "--section", default="sdata", dest="NSECTION",
-                      action="store", type="string",
-                      help="New section name must be "
-                      "less than seven characters")
+    parser.add_option("-F", "--func_name", default="main",help="where inject")
     parser.add_option("-v", "--verbose", default=False, dest="VERBOSE",
                       action="store_true",
                       help="For debug information output.")
@@ -71,14 +66,16 @@ def main():
                 options.SHELLCODE,
                 options.OBJECT_FILE)
     (entry,inject_point) = elfp.patch_elf()
-    file_offset = inject_point - 0x08048000
+    base_addr = get_base_addr_elf(options.FILE)
+    print "[+] base addr :{0:#x}".format(base_addr)
+    file_offset = inject_point - base_addr
     print "[+] Patched File: {0}".format(options.OUTPUT)
-    print "[+] Patched inject_point: {0:#x} file Offset: {1:#x}".format(inject_point,file_offset)
-
+    print "[+] Patched inject_point: {0:#x} file Offset: {1:#x}".format(inject_point,
+        file_offset)
     funcs = parse_text_section(options.OUTPUT)
-    offset = int(funcs['<main>']['offset'],16)
-    file_offset = offset - 0x08048000
-    print "[+] main :{0:#x} file offset: {1:#x}".format(offset,file_offset)
+    offset = int(funcs[options.func_name]['offset'],16)
+    file_offset = offset - base_addr
+    print "[+] {0}: {1:#x} file offset: {2:#x}".format(options.func_name,offset,file_offset)
     if options.INJECT_INS:
       print "[+] inject prolog:"
       write_str_elf(options.OUTPUT,options.OUTPUT + '.1',file_offset,to_binary_code(options.INJECT_INS))

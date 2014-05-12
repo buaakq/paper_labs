@@ -52,16 +52,18 @@ class elfpatch():
         #find range of the first PT_LOAD section
         for header, values in self.elfbin.prog_hdr.iteritems():
             #print 'program header', header, values
-            if values['p_flags'] == 0x5 and values['p_type'] == 0x1:
-                #print "Found text segment"
+            '''vxworks image text and data in a single segment '''
+            #if values['p_flags'] == 0x5 and values['p_type'] == 0x1:
+            if values['p_type'] == 0x1:
+                print "[+] Found text segment"
                 shellcode_vaddr = values['p_vaddr'] + values['p_filesz']
-                beginOfSegment = values['p_vaddr']
                 oldentry = self.elfbin.e_entry
-                sizeOfNewSegment = values['p_memsz'] + newBuffer
-                LOCofNewSegment = values['p_filesz'] + newBuffer
                 headerTracker = header
                 newOffset = values['p_offset'] + values['p_filesz']
-
+                break
+        # Note: noly for test
+        shellcode_vaddr = 0x00308000 + 0xce186
+        newOffset = 0x000060 + 0xce186
         #SPLIT THE FILE
         self.bin_file.seek(0)
         file_1st_part = self.bin_file.read(newOffset)

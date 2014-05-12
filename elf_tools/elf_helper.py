@@ -4,6 +4,7 @@ import commands
 import sys
 import shutil
 import struct
+import subprocess
 
 def to_binary_code(shellcode):
     hex_list = shellcode.split('\\x')[1:]
@@ -123,6 +124,14 @@ def get_relocate_text(obj):
           item['name'] = t.split()[4]
           symbs.append(item)
     return symbs
+
+def get_base_addr_elf(elf):
+    cmd = "readelf -l {0} | grep LOAD | tr -s ' ' | cut -d ' ' -f 4".format(elf)
+    tmp = subprocess.Popen(cmd, shell=True,stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE).communicate()[0]
+    tmp = tmp.split('\n')[0]
+    return int(tmp,16)-0x000060
 
 if __name__ == '__main__':
     from elfbin import elfbin
