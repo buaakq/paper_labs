@@ -1,4 +1,4 @@
-str='open\n'
+str='foo1'
 str = str + '\x00' * ((4-len(str)%4)%4)
 print "C:"
 print '\tprintf("foo1");'
