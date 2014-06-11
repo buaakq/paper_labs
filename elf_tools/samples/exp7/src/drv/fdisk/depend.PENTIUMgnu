@@ -1,0 +1,53 @@
+$(LIBDIR)/nec765Fd.o: nec765Fd.c C:/Tornado2.2/target/h/copyright_wrs.h \
+  C:/Tornado2.2/target/h/vxWorks.h C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/taskLib.h C:/Tornado2.2/target/h/vwModNum.h \
+  C:/Tornado2.2/target/h/classLib.h C:/Tornado2.2/target/h/objLib.h \
+  C:/Tornado2.2/target/h/errno.h C:/Tornado2.2/target/h/memLib.h \
+  C:/Tornado2.2/target/h/qLib.h C:/Tornado2.2/target/h/qClass.h \
+  C:/Tornado2.2/target/h/regs.h C:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  C:/Tornado2.2/target/h/excLib.h \
+  C:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  C:/Tornado2.2/target/h/private/eventP.h \
+  C:/Tornado2.2/target/h/private/funcBindP.h \
+  C:/Tornado2.2/target/h/semLib.h \
+  C:/Tornado2.2/target/h/private/classLibP.h \
+  C:/Tornado2.2/target/h/vwModNum.h C:/Tornado2.2/target/h/memLib.h \
+  C:/Tornado2.2/target/h/classLib.h \
+  C:/Tornado2.2/target/h/private/objLibP.h \
+  C:/Tornado2.2/target/h/objLib.h \
+  C:/Tornado2.2/target/h/private/semLibP.h C:/Tornado2.2/target/h/qLib.h \
+  C:/Tornado2.2/target/h/private/eventLibP.h \
+  C:/Tornado2.2/target/h/stdlib.h C:/Tornado2.2/target/h/blkIo.h \
+  C:/Tornado2.2/target/h/ioLib.h C:/Tornado2.2/target/h/limits.h \
+  C:/Tornado2.2/target/h/tool/gnu/limits.h \
+  C:/Tornado2.2/target/h/net/uio.h C:/Tornado2.2/target/h/fcntl.h \
+  C:/Tornado2.2/target/h/sys/fcntlcom.h C:/Tornado2.2/target/h/unistd.h \
+  C:/Tornado2.2/target/h/iosLib.h C:/Tornado2.2/target/h/dllLib.h \
+  C:/Tornado2.2/target/h/stdlib.h C:/Tornado2.2/target/h/errnoLib.h \
+  C:/Tornado2.2/target/h/stdio.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  C:/Tornado2.2/target/h/string.h \
+  C:/Tornado2.2/target/h/private/semLibP.h \
+  C:/Tornado2.2/target/h/intLib.h \
+  C:/Tornado2.2/target/h/arch/i86/intI86Lib.h C:/Tornado2.2/target/h/iv.h \
+  C:/Tornado2.2/target/h/arch/i86/ivI86.h C:/Tornado2.2/target/h/wdLib.h \
+  C:/Tornado2.2/target/h/sysLib.h C:/Tornado2.2/target/h/bootLib.h \
+  C:/Tornado2.2/target/h/ttyLib.h C:/Tornado2.2/target/h/sioLib.h \
+  C:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  C:/Tornado2.2/target/h/sys/fcntlcom.h \
+  C:/Tornado2.2/target/h/drv/fdisk/nec765Fd.h

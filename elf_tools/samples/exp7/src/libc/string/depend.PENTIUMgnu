@@ -1,0 +1,505 @@
+$(LIBDIR)/ansiString.o: ansiString.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h \
+  C:/Tornado2.2/target/h/private/strxfrmP.h \
+  C:/Tornado2.2/target/h/private/strStateP.h \
+  C:/Tornado2.2/target/h/errno.h C:/Tornado2.2/target/h/symLib.h \
+  C:/Tornado2.2/target/h/vwModNum.h C:/Tornado2.2/target/h/symbol.h \
+  C:/Tornado2.2/target/h/private/symbolP.h \
+  C:/Tornado2.2/target/h/sllLib.h C:/Tornado2.2/target/h/classLib.h \
+  C:/Tornado2.2/target/h/objLib.h C:/Tornado2.2/target/h/memLib.h \
+  C:/Tornado2.2/target/h/hashLib.h \
+  C:/Tornado2.2/target/h/private/objLibP.h \
+  C:/Tornado2.2/target/h/objLib.h C:/Tornado2.2/target/h/classLib.h \
+  C:/Tornado2.2/target/h/private/semLibP.h \
+  C:/Tornado2.2/target/h/vwModNum.h C:/Tornado2.2/target/h/semLib.h \
+  C:/Tornado2.2/target/h/qLib.h C:/Tornado2.2/target/h/qClass.h \
+  C:/Tornado2.2/target/h/private/classLibP.h \
+  C:/Tornado2.2/target/h/memLib.h \
+  C:/Tornado2.2/target/h/private/objLibP.h \
+  C:/Tornado2.2/target/h/private/eventLibP.h \
+  C:/Tornado2.2/target/h/private/symLibP.h \
+  C:/Tornado2.2/target/h/private/symbolP.h \
+  C:/Tornado2.2/target/h/limits.h \
+  C:/Tornado2.2/target/h/tool/gnu/limits.h C:/Tornado2.2/target/h/stdio.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  C:/Tornado2.2/target/h/sysSymTbl.h \
+  C:/Tornado2.2/target/h/private/funcBindP.h
+$(LIBDIR)/memchr.o: memchr.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/memcmp.o: memcmp.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/memcpy.o: memcpy.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/memmove.o: memmove.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/memset.o: memset.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strcat.o: strcat.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strchr.o: strchr.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strcmp.o: strcmp.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strcoll.o: strcoll.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/private/strxfrmP.h \
+  C:/Tornado2.2/target/h/string.h \
+  C:/Tornado2.2/target/h/private/strStateP.h
+$(LIBDIR)/strcpy.o: strcpy.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strcspn.o: strcspn.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strerror.o: strerror.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h C:/Tornado2.2/target/h/errno.h \
+  C:/Tornado2.2/target/h/symLib.h C:/Tornado2.2/target/h/vwModNum.h \
+  C:/Tornado2.2/target/h/symbol.h \
+  C:/Tornado2.2/target/h/private/symbolP.h \
+  C:/Tornado2.2/target/h/sllLib.h C:/Tornado2.2/target/h/classLib.h \
+  C:/Tornado2.2/target/h/objLib.h C:/Tornado2.2/target/h/memLib.h \
+  C:/Tornado2.2/target/h/hashLib.h \
+  C:/Tornado2.2/target/h/private/objLibP.h \
+  C:/Tornado2.2/target/h/objLib.h C:/Tornado2.2/target/h/classLib.h \
+  C:/Tornado2.2/target/h/private/semLibP.h \
+  C:/Tornado2.2/target/h/vwModNum.h C:/Tornado2.2/target/h/semLib.h \
+  C:/Tornado2.2/target/h/qLib.h C:/Tornado2.2/target/h/qClass.h \
+  C:/Tornado2.2/target/h/private/classLibP.h \
+  C:/Tornado2.2/target/h/memLib.h \
+  C:/Tornado2.2/target/h/private/objLibP.h \
+  C:/Tornado2.2/target/h/private/eventLibP.h \
+  C:/Tornado2.2/target/h/private/symLibP.h \
+  C:/Tornado2.2/target/h/private/symbolP.h \
+  C:/Tornado2.2/target/h/limits.h \
+  C:/Tornado2.2/target/h/tool/gnu/limits.h C:/Tornado2.2/target/h/stdio.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  C:/Tornado2.2/target/h/sysSymTbl.h \
+  C:/Tornado2.2/target/h/private/funcBindP.h
+$(LIBDIR)/string.o: string.c
+$(LIBDIR)/strlen.o: strlen.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strncat.o: strncat.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strncmp.o: strncmp.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strncpy.o: strncpy.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strpbrk.o: strpbrk.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strrchr.o: strrchr.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strspn.o: strspn.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strstr.o: strstr.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strtok.o: strtok.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strtok_r.o: strtok_r.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h
+$(LIBDIR)/strxfrm.o: strxfrm.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/limits.h \
+  C:/Tornado2.2/target/h/tool/gnu/limits.h \
+  C:/Tornado2.2/target/h/private/strxfrmP.h \
+  C:/Tornado2.2/target/h/string.h \
+  C:/Tornado2.2/target/h/private/strStateP.h
+$(LIBDIR)/xstate.o: xstate.c C:/Tornado2.2/target/h/vxWorks.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/arch/i86/archI86.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  c:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/types/vxANSI.h \
+  C:/Tornado2.2/target/h/types/vxCpu.h \
+  C:/Tornado2.2/target/h/types/vxArch.h \
+  C:/Tornado2.2/target/h/types/vxParams.h \
+  C:/Tornado2.2/target/h/types/vxTypesBase.h \
+  C:/Tornado2.2/target/h/types/vxTypesOld.h \
+  C:/Tornado2.2/target/h/sys/types.h \
+  C:/Tornado2.2/target/h/types/vxTypes.h \
+  C:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  C:/Tornado2.2/target/h/string.h C:/Tornado2.2/target/h/limits.h \
+  C:/Tornado2.2/target/h/tool/gnu/limits.h \
+  C:/Tornado2.2/target/h/private/strStateP.h
