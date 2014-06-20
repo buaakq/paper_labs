@@ -3,9 +3,9 @@ section .text
 _start:
    push ebp
    mov ebp,esp
-   sub esp,10h
+   sub esp,8h
    call timestamp1
-   push 38a526h
+   push 3da776h
    ret
 
 timestamp1:
