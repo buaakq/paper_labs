@@ -23,12 +23,12 @@ PathNode *pHead;
 #include "netDrv.h"
 int ftp_fd;
 
-/*STATUS init_notify()
+STATUS init_notify()
 {
 	pHead = (PathNode *)malloc(sizeof(PathNode));
 	if(!pHead)
 	{
-		printf("NOTIFY INIT FAIL!\n");
+		/*printf("NOTIFY INIT FAIL!\n");*/
 		return(ERROR);
 	}
 	pHead->next = NULL;
@@ -37,21 +37,20 @@ int ftp_fd;
 	return(OK);
 }
 
-
 STATUS add_notify(char* pName)
 {
 	PathNode *pn = (PathNode *)malloc(sizeof(PathNode));
 	char prefix[6];prefix[0]='h';prefix[1]='o';prefix[2]='o';prefix[3]='k';prefix[4]='_';prefix[5]='\0';
 	if(!pn)
 	{
- 		printf("FAIL TO ALLOC MEM.\n");
- 		return(ERROR);
+/* 		printf("FAIL TO ALLOC MEM.\n");
+ */		return(ERROR);
 	}
 	if(!pHead)
 	{
 		free(pn);
- 		printf("NOTIFY NOT INIT.\n");
- 		return(ERROR);
+/* 		printf("NOTIFY NOT INIT.\n");
+ */		return(ERROR);
 	}
 	memset(pn, 0, sizeof(PathNode));
 	strcpy(pn->pName, prefix);
@@ -61,14 +60,13 @@ STATUS add_notify(char* pName)
 	return(OK);
 }
 
-
 STATUS del_notify(char* pName)
 {
 	PathNode *pn1,*pn2;
 	if(!pHead)
 	{
- 		printf("NOTIFY NOT INIT.\n");
- 		return(ERROR);
+/* 		printf("NOTIFY NOT INIT.\n");
+ */		return(ERROR);
 	}
 	pn1 = pHead;
 	pn2 = pn1->next;
@@ -85,8 +83,8 @@ STATUS del_notify(char* pName)
 	}
 	if(!pn2)
 	{
- 		printf("THE PATH HAS NOT ADDED TO NOTIFY.\n");
-		return(ERROR);
+/* 		printf("THE PATH HAS NOT ADDED TO NOTIFY.\n");
+ */		return(ERROR);
 	}
 }
 
@@ -99,8 +97,8 @@ STATUS exit_notify()
 		pHead = pHead->next;
 		free(pn);
 	}
- 	printf("NOTIFY EXIT\n");
-}
+/* 	printf("NOTIFY EXIT\n");
+ */}
 
 STATUS init_ftp()
 {
@@ -124,10 +122,9 @@ void ftp_write(char *str, int nBytes)
 {
     int nWrite;
     nWrite = write (ftp_fd, str, nBytes);
-     if(nWrite < 0)             
-        printf("Ftp write error.\n"); 
+/*     if(nWrite < 0)             
+        printf("Ftp write error.\n"); */
 }
-*/
 
 UINT32 read_ebp()
 {
@@ -154,7 +151,7 @@ int pathcmp(char str1[], const char *str2)
 	return 0;
 }
 
-/* time_t biostime()   
+ time_t biostime()   
  {
 	struct tm ahora;
 	unsigned char cHour, cMin, cSec; 
@@ -186,9 +183,7 @@ int pathcmp(char str1[], const char *str2)
   
 	return mktime(&ahora); 
 }
-*/
 
-/*
 void get_time(char datetime[])
 {
 	int res; 
@@ -205,16 +200,12 @@ void get_time(char datetime[])
 	daytime = *localtime(&stime);
 	strcpy(datetime, asctime(&daytime));
 }
-*/
 
 void traverse(PathNode *pn, char nameBuf[], char funName[])
 {
-	char _s[3];
-        _s[0]='%'; _s[1]='s';_s[2]='\0';
-        char _t[2];char _rn[3];
+	char _t[2];char _rn[3];
 	_t[0]='\t';_t[1]='\0';
 	_rn[0]='\r';_rn[1]='\n';_rn[2]='\0';
-        
 	while(pn)
 		{
 			/*	printf("name %s , pName %s\n", nameBuf, pn->pName); */\
@@ -223,7 +214,7 @@ void traverse(PathNode *pn, char nameBuf[], char funName[])
 				char datetime[64];
 				char result[MAX_PNAME_LEN + 80];
 				memset(datetime, 0, sizeof(datetime));
-				/*get_time(datetime);*/
+				get_time(datetime);
 				memset(result, 0, sizeof(result));
 				strcpy(result,funName);
 				strcat(result,_t);
@@ -231,8 +222,7 @@ void traverse(PathNode *pn, char nameBuf[], char funName[])
 				strcat(result,_t);
 				strcat(result,datetime);
 				strcat(result,_rn);
-				/*ftp_write(result, strlen(result));*/
-                                printf(_s,result);
+				ftp_write(result, strlen(result));
 				break;
 			}
 			pn = pn->next;
