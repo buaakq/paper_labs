@@ -1,0 +1,2 @@
+- hook dosFsOpen 
+- only printf the name and path(failed)

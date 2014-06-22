@@ -251,7 +251,7 @@ void hook_dosFsOpen()
 	DOS_FILE_DESC_ID pfd;
 	if(!pHead)
 	{
-		/*printf("NOTIFY NOT INIT.\n");*/
+		printf("NOTIFY NOT INIT.\n");
 		return;
 	}
 	pn = pHead->next;
