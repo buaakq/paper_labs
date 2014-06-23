@@ -1,5 +1,5 @@
 #define DECLAR_HOOK_FS(name) \
-  void hookFs##name()
+  void __hook_dosFs##name()
 
 DECLAR_HOOK_FS(Open);
 DECLAR_HOOK_FS(Create);
