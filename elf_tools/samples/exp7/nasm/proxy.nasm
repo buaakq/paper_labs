@@ -1,6 +1,16 @@
 global_start
 section .text
 
+hook_usrAppInit:
+  push ebp
+  mov ebp,esp
+  sub esp,xxh
+
+  call init_hookFs
+
+  push xxxxxxxxxh
+  ret
+
 hook_dosFsOpen:
   push ebp
   mov ebp,esp

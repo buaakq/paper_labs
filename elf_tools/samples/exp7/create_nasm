@@ -35,7 +35,9 @@ objdump -d -Mintel $o_file > /tmp/hookFs0.nasm
 
 sed '1,6d' -i /tmp/hookFs0.nasm
 
-sed 's/0000.... <//g' /tmp/hookFs0.nasm | sed 's/>:/:/g' | sed 's/[0-9a-f]*:.\{22,22\}//g' | sed 's/<.*>//g' | sed 's\ PTR \\g'| sed 's/call /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/je   /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/jne  /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/jmp  /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/\+eiz\*1//g' | sed '/ds/d' | sed '/ret/abcdefg' | sed '/bcdefg/,/^$/d' | sed '/ret/G' >  /tmp/test2.nasm
+sed 's/0000.... <//g' /tmp/hookFs0.nasm | sed 's/>:/:/g' | sed 's/[0-9a-f]*:.\{22,22\}//g' | sed 's/<.*>//g' | sed 's\ PTR \\g'| sed 's/call /&0x/g' | sed 's/0x\s\s/  0x/g'| sed 's/jle  /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/je   /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/jne  /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/jmp  /&0x/g' | sed 's/0x\s\s/  0x/g'| sed 's/jns  /&0x/g' | sed 's/0x\s\s/  0x/g' | sed 's/\+eiz\*1//g' | sed '/ds/d' | sed '/ret/abcdefg' | sed '/bcdefg/,/^$/d' | sed '/ret/G' >  /tmp/test2.nasm
+
+#sed  's/jns  /&0x/g' /tmp/test2.nasm  | sed 's/0x\s\s/  0x/g' > /tmp/test2.nasm
 
 
 cat $proxy_file /tmp/test2.nasm > $out_file
