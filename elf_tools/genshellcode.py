@@ -15,7 +15,7 @@ def check():
     found = False
   return found
 
-def get_output(inf,arch='elf'):
+def compile_nasm_file(inf,arch='elf'):
   """format into a string of bytes"""
   output = ''
   if '.nasm' in inf:
@@ -60,14 +60,14 @@ def compile_instruction(instruction,arch='elf'):
   """Compile a single instruction and return opcodes"""
   with open('/tmp/tmp-me.nasm', 'w+') as f:
     f.write(instruction.decode('string-escape')+'\n')
-  ops = encode(get_output('/tmp/tmp-me.nasm',arch))
-  system('rm -f /tmp/tmp-me.nasm /tmp/tmp-me.o')
+  ops = encode(compile_nasm_file('/tmp/tmp-me.nasm',arch))
+  #system('rm -f /tmp/tmp-me.nasm /tmp/tmp-me.o')
   return ops
 
 def run(options):
   """encode/dump"""
   if options.inf:
-    dmp = encode(get_output(options.inf,options.arch))
+    dmp = encode(compile_nasm_file(options.inf,options.arch))
   elif options.instruction:
     dmp = compile_instruction(options.instruction,options.arch)
 

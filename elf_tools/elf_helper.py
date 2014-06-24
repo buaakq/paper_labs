@@ -9,9 +9,9 @@ import subprocess
 def to_binary_code(shellcode):
     hex_list = shellcode.split('\\x')[1:]
     return ''.join([struct.pack('<B',int(t,16)) for t in hex_list])
+
 def to_shellcode(binary):
     shellcode = ''.join([ '\\x{0:x}'.format(struct.unpack('<B',t)[0]) for t in binary])
-    print shellcode
     return shellcode
 '''
 def get_text_section(object_file):
@@ -40,12 +40,15 @@ def parse_text_section(obj):
 
     '''
     if line like this:#080484a0 <_fini>:
-    return (name,offset)
+    return (offset,name)
     '''
     def get_func_title(line):
       t = line.split(':',1)
       if len(t) == 2 and t[1] == '' and len(t[0].split()) == 2:
-        return t[0].split(' ')
+        (offset,name) = t[0].split(' ')
+        if name[0] == '<' and name [-1] == '>':
+          name = name[1:-1]
+        return (offset,name)
       return None
 
     def get_opcode(line):
@@ -87,10 +90,11 @@ def get_func_addr(elf,func):
     # need packed
     return int(tmp.split('\n')[0].split()[0],16)
 
-def write_str_elf(elf,output,offset,value):
-    shutil.copy2(elf, output)
+def write_str_elf(elf,offset,value):
+    #output = "{0}.tmp"
+    #shutil.copy2(elf, output)
     old = ''
-    with open(output,'r+') as f:
+    with open(elf,'r+') as f:
       st ='<'
       for i in value:
         st += 'B'
@@ -100,7 +104,8 @@ def write_str_elf(elf,output,offset,value):
       old = f.read(len(value))
       f.seek(offset,0)
       f.write(value)
-    print "write:{0}->{1}\n".format(to_shellcode(old),to_shellcode(value))
+    #shutil.move(output,elf)
+    print "[+] write:{0} => {1}\n".format(to_shellcode(old),to_shellcode(value))
 
 
 def write_addr_elf(elf,output,offset,value):
@@ -125,13 +130,30 @@ def get_relocate_text(obj):
           symbs.append(item)
     return symbs
 
-def get_base_addr_elf(elf):
-    cmd = "readelf -l {0} | grep LOAD | tr -s ' ' | cut -d ' ' -f 4".format(elf)
+def run_cmd(cmd):
+    """
+    execute cmd and return stdout,ignore stderr
+    """
     tmp = subprocess.Popen(cmd, shell=True,stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE).communicate()[0]
-    tmp = tmp.split('\n')[0]
-    return int(tmp,16)-0x000060
+    return tmp
+
+def offset_file_vaddr(elf):
+    """
+    1. Get virtual addr of LOAD from segment table
+    2. Get offset of LOAD from segment table
+    3. Return addr - offset 
+    """
+    cmd = "readelf -l {0} | grep LOAD | tr -s ' ' | cut -d ' ' -f 4".format(elf)
+    tmp = run_cmd(cmd)
+    vaddr = tmp.split('\n')[0]
+
+    cmd = "readelf -l {0} | grep LOAD | tr -s ' ' | cut -d ' ' -f 3".format(elf)
+    tmp = run_cmd(cmd)
+    offset = tmp.split('\n')[0]
+
+    return int(vaddr,16) - int(offset,16)
 
 if __name__ == '__main__':
     from elfbin import elfbin
