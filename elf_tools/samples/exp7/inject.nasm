@@ -82,13 +82,19 @@ init_hookFs:
    	push   ebx
    	sub    esp,0xc
    	push   0x404
-   	call   0x10 
-  	add    esp,0x10
+   	
+	call malloc
+	;call   0x10 
+  	
+	add    esp,0x10
   	mov    ebx,eax
   	sub    esp,0xc
   	push   0x404
-  	call   0x22 
-  	add    esp,0x10
+  	
+	;call   0x22 
+  	call malloc
+
+	add    esp,0x10
   	sub    esp,0x8
   	mov    DWORD[eax+0x400],ebx
   	lea    eax,[ebp-0x2]
@@ -96,8 +102,11 @@ init_hookFs:
   	mov    BYTE[eax+0x1],0x0
   	push   eax
   	push   ebx
-  	call   0x45 
-  	mov    DWORD[ebx+0x400],0x0
+  	
+	;call   0x45
+	call strcpy
+  	
+	mov    DWORD[ebx+0x400],0x0
   	mov    eax,0x1
   	mov    ebx,DWORD[ebp-0x18]
   	mov    esp,ebp
@@ -109,7 +118,7 @@ read_ebp:
   	mov    ebp,esp
   	mov    eax,ebp
   	mov    esp,ebp
-  	pop    ebp
+  	pop    ebpjjj
   	ret    
 
 pathcmp:
@@ -124,19 +133,28 @@ pathcmp:
   	mov    ebx,DWORD[ebp+0x8]
   	sub    esp,0xc
   	push   ebx
-  	call   0x86 
-  	add    esp,0x10
+  	
+	call strlen
+	;call   0x86 
+  	
+	add    esp,0x10
   	cmp    BYTE[eax+ebx*1-0x1],0x2f
   	je     0xc2 
   	sub    esp,0xc
   	push   ebx
-  	call   0x99 
-  	add    esp,0x10
+  	
+	;call   0x99 
+  	call strlen
+
+	add    esp,0x10
   	sub    esp,0xc
   	mov    BYTE[eax+ebx*1],0x2f
   	push   ebx
-  	call   0xa9 
-  	mov    BYTE[eax+ebx*1+0x1],0x0
+  	
+	;call   0xa9 
+  	call strlen
+
+	mov    BYTE[eax+ebx*1+0x1],0x0
   	jmp    0xc2 
   	lea    esi,[esi+0x0]
   	lea    edi,[edi+0x0]
@@ -199,15 +217,21 @@ traverse:
  	sub    esp,0x8
  	push   ebx
  	push   edi
- 	call   0x166 
- 	add    esp,0x10
+ 	
+	;call   0x166 
+ 	call strcmp
+
+	add    esp,0x10
  	test   eax,eax
  	je     0x186 
  	sub    esp,0x8
  	push   edi
  	push   ebx
- 	call   0x177 
- 	add    esp,0x10
+ 	
+	;call   0x177 
+ 	call pathcmp
+
+	add    esp,0x10
  	test   eax,eax
  	jne    0x230 
  	sub    esp,0x4
@@ -215,55 +239,82 @@ traverse:
  	push   0x40
  	push   0x0
  	push   eax
- 	call   0x195 
- 	add    esp,0x10
+ 	
+	;call   0x195 
+ 	call memset
+
+	add    esp,0x10
  	sub    esp,0x4
  	push   0x450
  	push   0x0
  	push   esi
- 	call   0x1a8 
- 	add    esp,0x10
+ 	
+	;call   0x1a8 
+ 	call memset
+
+	add    esp,0x10
  	mov    eax,DWORD[ebp+0x10]
  	sub    esp,0x8
  	push   eax
  	push   esi
- 	call   0x1b8 
- 	add    esp,0x10
+ 	
+	;call   0x1b8 
+ 	call strcpy
+
+	add    esp,0x10
  	mov    eax,DWORD[ebp-0x4a4]
  	sub    esp,0x8
  	push   eax
  	push   esi
- 	call   0x1cb 
- 	add    esp,0x10
+        
+	call strcat
+ 	;call   0x1cb 
+ 	
+	add    esp,0x10
  	sub    esp,0x8
  	push   edi
  	push   esi
- 	call   0x1d8 
- 	add    esp,0x10
+
+ 	;call   0x1d8 
+ 	call strcat 
+
+	add    esp,0x10
  	lea    eax,[ebp-0x49a]
  	sub    esp,0x8
  	push   eax
  	push   esi
- 	call   0x1eb 
- 	add    esp,0x10
+ 	
+	;call   0x1eb 
+ 	call strcat
+
+	add    esp,0x10
  	mov    eax,DWORD[ebp-0x4a0]
  	sub    esp,0x8
  	push   eax
  	push   esi
- 	call   0x1fe 
- 	add    esp,0x10
+ 	
+	;call   0x1fe 
+ 	call strcat
+
+	add    esp,0x10
  	lea    eax,[ebp-0x8]
  	sub    esp,0x8
  	push   eax
  	push   esi
- 	call   0x20e 
- 	add    esp,0x10
+ 	
+	;call   0x20e 
+ 	call strcat
+
+	add    esp,0x10
  	lea    eax,[ebp-0x4]
  	sub    esp,0x8
  	push   esi
  	push   eax
- 	call   0x21e 
- 	jmp    0x23e 
+ 	
+	call printf
+	;call   0x21e 
+ 	
+	jmp    0x23e 
  	lea    esi,[esi+0x0]
  	lea    edi,[edi+0x0]
  	mov    ebx,DWORD[ebx+0x400]
@@ -287,8 +338,11 @@ __hook_dosFsOpen:
  	jne    0x2a0 
  	sub    esp,0xc
  	push   0x24b
- 	call   0x28d 
- 	jmp    0x2e9 
+
+	
+ 	;call   0x28d 
+ 	
+	jmp    0x2e9 
  	lea    esi,[esi+0x0]
  	lea    edi,[edi+0x0]
  	mov    esi,DWORD[eax+0x400]
