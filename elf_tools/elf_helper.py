@@ -61,6 +61,9 @@ def parse_text_section(obj):
 
 
     out = commands.getoutput("objdump -d {0}".format(obj)).split('\n')[6:]
+
+#    print out
+
     funcs = []
     func = {}
     (func['offset'],func['name']) = get_func_title(out[0])
