@@ -8,12 +8,28 @@ from optparse import OptionParser
 from elfpatch import elfpatch
 from elf_helper import *
 from genshellcode import *
+from struct import *
 
-def relocate(rel):
+def get_complement(x):
+    y = hex((eval("0b"+str(int(bin(x)[3:].zfill(4).replace("0","2").replace("1","0").replace("2","1"))))+eval("0b1")))[2:].zfill(4)
+    return y
+
+def relocate(obj,vxworks):
+    rel = get_relocate_text(obj)
+    sym_table = get_symtab_text(obj)
+    rel = modify_rel_table(rel,sym_table)
+    func = parse_text_section(obj)
+    rel = get_func_addr(rel,func)
+    rel = get_sym_addr(rel,vxworks)
     for k in rel:
       k['result'] = -4 + k['sym_addr'] - k['rel_addr']
+      k['result_hex_complement']=get_complement(k['result'])  
       k.pop('sym_addr')
       k.pop('rel_addr')
+      k.pop('result')
+      k.pop('offset2func')
+      k.pop('sym_name')
+      k.pop('func_name')
     return rel 
 
 def get_sym_addr(rel,vxworks):
@@ -22,7 +38,7 @@ def get_sym_addr(rel,vxworks):
       sym_name = k['sym_name']
       if sym_name in syms:
         k['sym_addr'] =int(syms[sym_name]['offset'],16)
-        k.pop('sym_name')
+       # k.pop('sym_name')
     return rel
     
 
@@ -34,8 +50,8 @@ def get_func_addr(rel,func):
         inject_offset = int(func[func_name]['offset'],16)
         func_addr = int(inject_point,16) + inject_offset
         t['rel_addr'] = func_addr + t['offset2func']
-        t.pop('offset2func')
-        t.pop('func_name')
+       # t.pop('offset2func')
+       # t.pop('func_name')
     return rel 
 
 def modify_rel_table(rel,sym):
@@ -72,7 +88,8 @@ def get_symtab_text(obj):
     for t in tmp:
       if t == '':
         break
-      if ((t.split()[3] == 'FUNC') and (t.split()[4] == 'GLOBAL')):
+      if ((t.split()[3] == 'FUNC')
+              and (t.split()[4] == 'GLOBAL')):
         item = {}
         item['func_name'] = t.split()[7]
         item['func_offset'] = int(t.split()[1],16) 
@@ -81,31 +98,20 @@ def get_symtab_text(obj):
 
 
 def main():
-    parser = OptionParser(usage='%prog [options]', description="")
+    parser = OptionParser(usage='%prog [options]', 
+         description="")
     
     parser.add_option("-t", "--object_file", default=False,
-                      dest="OBJECT_FILE", action="store",
-                      help="Get text section and  add it to out file    ")
+         dest="OBJECT_FILE", 
+         action="store",
+         help="Get text section and add it to out file")
 
-    parser.add_option("-f","--file",dest="FILE",action=
-                    "store", type="string")
+    parser.add_option("-f","--file",dest="FILE",
+         action="store", type="string")
+
     (options, args) = parser.parse_args()
-
-    func = parse_text_section(options.OBJECT_FILE)
-    rel_table = get_relocate_text(options.OBJECT_FILE)
-    sym_table = get_symtab_text(options.OBJECT_FILE)
-    rel_table = modify_rel_table(rel_table, sym_table)
     
-    funcs = parse_text_section(options.OBJECT_FILE)
-    rel_table = get_func_addr(rel_table,funcs)
-    rel_table  = get_sym_addr(rel_table,options.FILE)  
-    
-    rel_table = relocate(rel_table) 
-     
-    #print funcs
-
-    #print func
-    #print sym_table   
+    rel_table = relocate(options.OBJECT_FILE,options.FILE)
     print rel_table
 
 if __name__ == "__main__":
