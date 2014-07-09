@@ -21,7 +21,7 @@ def create_nasm(obj, rel, output):
         if (rel_off in t) and  ('fc ff ff ff' in t) and ('call' in t ):
            index = tmp.index(t)
            index_call = tmp[index].index('call')
-           tmp[index] = tmp[index][0:index_call] + ' call 0x'+ k['result_hex_complement'] 
+           tmp[index] = tmp[index][0:index_call] + ' call '+ hex(k['result']) 
            #tmp[index] = "got it!"
     f = open(output, "w")
     sep = '\n'
@@ -41,12 +41,13 @@ def relocate(obj,vxworks):
     func = parse_text_section(obj)
     rel = get_func_addr(rel,func)
     rel = get_sym_addr(rel,vxworks)
+    print rel
     for k in rel:
-      k['result'] = -4 + k['sym_addr'] - k['rel_addr']
+      k['result'] = + k['sym_addr'] - k['rel_addr']
       k['result_hex_complement']=get_complement(k['result'])  
       k.pop('sym_addr')
       k.pop('rel_addr')
-      k.pop('result')
+      #k.pop('result')
       k.pop('offset2func')
       k.pop('sym_name')
       k.pop('func_name')
@@ -68,8 +69,8 @@ def get_func_addr(rel,func):
       func_name = t['func_name']
       if func_name in func:
         inject_offset = int(func[func_name]['offset'],16)
-        func_addr = int(inject_point,16) + inject_offset
-        t['rel_addr'] = func_addr + t['offset2func']
+        t['func_addr'] = int(inject_point,16) + inject_offset
+        t['rel_addr'] = t['func_addr'] + t['offset2func']
        # t.pop('offset2func')
        # t.pop('func_name')
     return rel 

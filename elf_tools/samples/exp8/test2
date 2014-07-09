@@ -1,5 +1,5 @@
 
-hookFs.o:     file format elf32-i386
+src/hook_in_src/hookFs.o:     file format elf32-i386
 
 
 Disassembly of section .text:
@@ -11,12 +11,12 @@ Disassembly of section .text:
    6:	53                   	push   ebx
    7:	83 ec 0c             	sub    esp,0xc
    a:	68 04 04 00 00       	push   0x404
-   f:	e8 fc ff ff ff       	 call 0x351e6
+   f:	e8 fc ff ff ff       	 call -0x4ae16
   14:	83 c4 10             	add    esp,0x10
   17:	89 c3                	mov    ebx,eax
   19:	83 ec 0c             	sub    esp,0xc
   1c:	68 04 04 00 00       	push   0x404
-  21:	e8 fc ff ff ff       	 call 0x351d4
+  21:	e8 fc ff ff ff       	 call -0x4ae28
   26:	83 c4 10             	add    esp,0x10
   29:	a3 00 00 00 00       	mov    ds:0x0,eax
   2e:	83 ec 08             	sub    esp,0x8
@@ -26,7 +26,7 @@ Disassembly of section .text:
   3e:	c6 40 01 00          	mov    BYTE PTR [eax+0x1],0x0
   42:	50                   	push   eax
   43:	53                   	push   ebx
-  44:	e8 fc ff ff ff       	 call 0x2b1d1
+  44:	e8 fc ff ff ff       	 call -0x54e2b
   49:	c7 83 00 04 00 00 00 	mov    DWORD PTR [ebx+0x400],0x0
   50:	00 00 00 
   53:	b8 01 00 00 00       	mov    eax,0x1
@@ -57,18 +57,18 @@ Disassembly of section .text:
   7e:	8b 5d 08             	mov    ebx,DWORD PTR [ebp+0x8]
   81:	83 ec 0c             	sub    esp,0xc
   84:	53                   	push   ebx
-  85:	e8 fc ff ff ff       	 call 0x2b340
+  85:	e8 fc ff ff ff       	 call -0x54cbc
   8a:	83 c4 10             	add    esp,0x10
   8d:	80 7c 18 ff 2f       	cmp    BYTE PTR [eax+ebx*1-0x1],0x2f
   92:	74 2e                	je     c2 <pathcmp+0x52>
   94:	83 ec 0c             	sub    esp,0xc
   97:	53                   	push   ebx
-  98:	e8 fc ff ff ff       	 call 0x2b32d
+  98:	e8 fc ff ff ff       	 call -0x54ccf
   9d:	83 c4 10             	add    esp,0x10
   a0:	83 ec 0c             	sub    esp,0xc
   a3:	c6 04 18 2f          	mov    BYTE PTR [eax+ebx*1],0x2f
   a7:	53                   	push   ebx
-  a8:	e8 fc ff ff ff       	 call 0x2b31d
+  a8:	e8 fc ff ff ff       	 call -0x54cdf
   ad:	c6 44 18 01 00       	mov    BYTE PTR [eax+ebx*1+0x1],0x0
   b2:	eb 0e                	jmp    c2 <pathcmp+0x52>
   b4:	8d b6 00 00 00 00    	lea    esi,[esi+0x0]
@@ -133,7 +133,7 @@ Disassembly of section .text:
  160:	83 ec 08             	sub    esp,0x8
  163:	53                   	push   ebx
  164:	57                   	push   edi
- 165:	e8 fc ff ff ff       	 call 0x2af20
+ 165:	e8 fc ff ff ff       	 call -0x550dc
  16a:	83 c4 10             	add    esp,0x10
  16d:	85 c0                	test   eax,eax
  16f:	74 15                	je     186 <traverse+0x86>
@@ -149,54 +149,54 @@ Disassembly of section .text:
  18f:	6a 40                	push   0x40
  191:	6a 00                	push   0x0
  193:	50                   	push   eax
- 194:	e8 fc ff ff ff       	 call 0x2ae51
+ 194:	e8 fc ff ff ff       	 call -0x551ab
  199:	83 c4 10             	add    esp,0x10
  19c:	83 ec 04             	sub    esp,0x4
  19f:	68 50 04 00 00       	push   0x450
  1a4:	6a 00                	push   0x0
  1a6:	56                   	push   esi
- 1a7:	e8 fc ff ff ff       	 call 0x2ae3e
+ 1a7:	e8 fc ff ff ff       	 call -0x551be
  1ac:	83 c4 10             	add    esp,0x10
  1af:	8b 45 10             	mov    eax,DWORD PTR [ebp+0x10]
  1b2:	83 ec 08             	sub    esp,0x8
  1b5:	50                   	push   eax
  1b6:	56                   	push   esi
- 1b7:	e8 fc ff ff ff       	 call 0x2b05e
+ 1b7:	e8 fc ff ff ff       	 call -0x54f9e
  1bc:	83 c4 10             	add    esp,0x10
  1bf:	8b 85 5c fb ff ff    	mov    eax,DWORD PTR [ebp-0x4a4]
  1c5:	83 ec 08             	sub    esp,0x8
  1c8:	50                   	push   eax
  1c9:	56                   	push   esi
- 1ca:	e8 fc ff ff ff       	 call 0x2ae4b
+ 1ca:	e8 fc ff ff ff       	 call -0x551b1
  1cf:	83 c4 10             	add    esp,0x10
  1d2:	83 ec 08             	sub    esp,0x8
  1d5:	57                   	push   edi
  1d6:	56                   	push   esi
- 1d7:	e8 fc ff ff ff       	 call 0x2ae3e
+ 1d7:	e8 fc ff ff ff       	 call -0x551be
  1dc:	83 c4 10             	add    esp,0x10
  1df:	8d 85 66 fb ff ff    	lea    eax,[ebp-0x49a]
  1e5:	83 ec 08             	sub    esp,0x8
  1e8:	50                   	push   eax
  1e9:	56                   	push   esi
- 1ea:	e8 fc ff ff ff       	 call 0x2ae2b
+ 1ea:	e8 fc ff ff ff       	 call -0x551d1
  1ef:	83 c4 10             	add    esp,0x10
  1f2:	8b 85 60 fb ff ff    	mov    eax,DWORD PTR [ebp-0x4a0]
  1f8:	83 ec 08             	sub    esp,0x8
  1fb:	50                   	push   eax
  1fc:	56                   	push   esi
- 1fd:	e8 fc ff ff ff       	 call 0x2ae18
+ 1fd:	e8 fc ff ff ff       	 call -0x551e4
  202:	83 c4 10             	add    esp,0x10
  205:	8d 45 f8             	lea    eax,[ebp-0x8]
  208:	83 ec 08             	sub    esp,0x8
  20b:	50                   	push   eax
  20c:	56                   	push   esi
- 20d:	e8 fc ff ff ff       	 call 0x2ae08
+ 20d:	e8 fc ff ff ff       	 call -0x551f4
  212:	83 c4 10             	add    esp,0x10
  215:	8d 45 fc             	lea    eax,[ebp-0x4]
  218:	83 ec 08             	sub    esp,0x8
  21b:	56                   	push   esi
  21c:	50                   	push   eax
- 21d:	e8 fc ff ff ff       	 call 0x2e7d8
+ 21d:	e8 fc ff ff ff       	 call -0x51824
  222:	eb 1a                	jmp    23e <traverse+0x13e>
  224:	8d b6 00 00 00 00    	lea    esi,[esi+0x0]
  22a:	8d bf 00 00 00 00    	lea    edi,[edi+0x0]
@@ -243,7 +243,7 @@ Disassembly of section .text:
  282:	75 1c                	jne    2a0 <__hook_dosFsOpen+0x30>
  284:	83 ec 0c             	sub    esp,0xc
  287:	68 4b 02 00 00       	push   0x24b
- 28c:	e8 fc ff ff ff       	 call 0x2e769
+ 28c:	e8 fc ff ff ff       	 call -0x51893
  291:	eb 56                	jmp    2e9 <__hook_dosFsOpen+0x79>
  293:	8d b6 00 00 00 00    	lea    esi,[esi+0x0]
  299:	8d bc 27 00 00 00 00 	lea    edi,[edi+eiz*1+0x0]
@@ -255,7 +255,7 @@ Disassembly of section .text:
  2b3:	68 00 04 00 00       	push   0x400
  2b8:	6a 00                	push   0x0
  2ba:	53                   	push   ebx
- 2bb:	e8 fc ff ff ff       	 call 0x2ad2a
+ 2bb:	e8 fc ff ff ff       	 call -0x552d2
  2c0:	83 c4 10             	add    esp,0x10
  2c3:	e8 fc ff ff ff       	call   2c4 <__hook_dosFsOpen+0x54>
  2c8:	83 ec 08             	sub    esp,0x8
@@ -263,7 +263,7 @@ Disassembly of section .text:
  2cd:	8b 50 10             	mov    edx,DWORD PTR [eax+0x10]
  2d0:	52                   	push   edx
  2d1:	53                   	push   ebx
- 2d2:	e8 fc ff ff ff       	 call 0x2af43
+ 2d2:	e8 fc ff ff ff       	 call -0x550b9
  2d7:	83 c4 10             	add    esp,0x10
  2da:	83 ec 04             	sub    esp,0x4
  2dd:	68 5d 02 00 00       	push   0x25d
@@ -306,7 +306,7 @@ Disassembly of section .text:
  337:	68 00 04 00 00       	push   0x400
  33c:	6a 00                	push   0x0
  33e:	53                   	push   ebx
- 33f:	e8 fc ff ff ff       	  call 0x2aca6
+ 33f:	e8 fc ff ff ff       	  call -0x55356
  344:	83 c4 10             	add    esp,0x10
  347:	e8 fc ff ff ff       	call   348 <__hook_dosFsCreate+0x38>
  34c:	83 ec 08             	sub    esp,0x8
@@ -314,7 +314,7 @@ Disassembly of section .text:
  351:	8b 50 10             	mov    edx,DWORD PTR [eax+0x10]
  354:	52                   	push   edx
  355:	53                   	push   ebx
- 356:	e8 fc ff ff ff       	 call 0x2aebf
+ 356:	e8 fc ff ff ff       	 call -0x5513d
  35b:	83 c4 10             	add    esp,0x10
  35e:	83 ec 04             	sub    esp,0x4
  361:	68 f5 02 00 00       	push   0x2f5
@@ -356,14 +356,14 @@ Disassembly of section .text:
  3b8:	68 00 04 00 00       	push   0x400
  3bd:	6a 00                	push   0x0
  3bf:	56                   	push   esi
- 3c0:	e8 fc ff ff ff       	 call 0x2ac25
+ 3c0:	e8 fc ff ff ff       	 call -0x553d7
  3c5:	83 c4 10             	add    esp,0x10
  3c8:	e8 fc ff ff ff       	call   3c9 <__hook_dosFsRead+0x39>
  3cd:	e8 fc ff ff ff       	call   3ce <__hook_dosFsRead+0x3e>
  3d2:	83 ec 0c             	sub    esp,0xc
  3d5:	8b 58 08             	mov    ebx,DWORD PTR [eax+0x8]
  3d8:	53                   	push   ebx
- 3d9:	e8 fc ff ff ff       	 call 0x1463c
+ 3d9:	e8 fc ff ff ff       	 call -0x6b9c0
  3de:	8b 03                	mov    eax,DWORD PTR [ebx]
  3e0:	83 c4 10             	add    esp,0x10
  3e3:	83 ec 08             	sub    esp,0x8
@@ -371,7 +371,7 @@ Disassembly of section .text:
  3e9:	05 f0 00 00 00       	add    eax,0xf0
  3ee:	50                   	push   eax
  3ef:	56                   	push   esi
- 3f0:	e8 fc ff ff ff       	 call 0x2ae25
+ 3f0:	e8 fc ff ff ff       	 call -0x551d7
  3f5:	83 c4 10             	add    esp,0x10
  3f8:	83 ec 04             	sub    esp,0x4
  3fb:	68 79 03 00 00       	push   0x379
@@ -416,14 +416,14 @@ Disassembly of section .text:
  458:	68 00 04 00 00       	push   0x400
  45d:	6a 00                	push   0x0
  45f:	56                   	push   esi
- 460:	e8 fc ff ff ff       	 call 0x2ab85
+ 460:	e8 fc ff ff ff       	 call -0x55477
  465:	83 c4 10             	add    esp,0x10
  468:	e8 fc ff ff ff       	call   469 <__hook_dosFsWrite+0x39>
  46d:	e8 fc ff ff ff       	call   46e <__hook_dosFsWrite+0x3e>
  472:	83 ec 0c             	sub    esp,0xc
  475:	8b 58 08             	mov    ebx,DWORD PTR [eax+0x8]
  478:	53                   	push   ebx
- 479:	e8 fc ff ff ff       	 call 0x1459c
+ 479:	e8 fc ff ff ff       	 call -0x6ba60
  47e:	8b 03                	mov    eax,DWORD PTR [ebx]
  480:	83 c4 10             	add    esp,0x10
  483:	83 ec 08             	sub    esp,0x8
@@ -431,7 +431,7 @@ Disassembly of section .text:
  489:	05 f0 00 00 00       	add    eax,0xf0
  48e:	50                   	push   eax
  48f:	56                   	push   esi
- 490:	e8 fc ff ff ff       	 call 0x2ad85
+ 490:	e8 fc ff ff ff       	 call -0x55277
  495:	83 c4 10             	add    esp,0x10
  498:	83 ec 04             	sub    esp,0x4
  49b:	68 14 04 00 00       	push   0x414
@@ -477,14 +477,14 @@ Disassembly of section .text:
  4f8:	68 00 04 00 00       	push   0x400
  4fd:	6a 00                	push   0x0
  4ff:	56                   	push   esi
- 500:	e8 fc ff ff ff       	 call 0x2aae5
+ 500:	e8 fc ff ff ff       	 call -0x55517
  505:	83 c4 10             	add    esp,0x10
  508:	e8 fc ff ff ff       	call   509 <__hook_dosFsClose+0x39>
  50d:	83 ec 0c             	sub    esp,0xc
  510:	8b 00                	mov    eax,DWORD PTR [eax]
  512:	8b 58 08             	mov    ebx,DWORD PTR [eax+0x8]
  515:	53                   	push   ebx
- 516:	e8 fc ff ff ff       	 call 0x144ff
+ 516:	e8 fc ff ff ff       	 call -0x6bafd
  51b:	8b 03                	mov    eax,DWORD PTR [ebx]
  51d:	83 c4 10             	add    esp,0x10
  520:	83 ec 08             	sub    esp,0x8
@@ -492,13 +492,13 @@ Disassembly of section .text:
  526:	05 f0 00 00 00       	add    eax,0xf0
  52b:	50                   	push   eax
  52c:	56                   	push   esi
- 52d:	e8 fc ff ff ff       	 call 0x2ace8
+ 52d:	e8 fc ff ff ff       	 call -0x55314
  532:	83 c4 10             	add    esp,0x10
  535:	83 ec 04             	sub    esp,0x4
  538:	68 b4 04 00 00       	push   0x4b4
  53d:	56                   	push   esi
  53e:	57                   	push   edi
- 53f:	e8 fc ff ff ff       	 call 0x351e6
+ 53f:	e8 fc ff ff ff       	 call -0x4ae16
  544:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  54a:	5b                   	pop    ebx
  54b:	5e                   	pop    esi
@@ -537,7 +537,7 @@ Disassembly of section .text:
  597:	68 00 04 00 00       	push   0x400
  59c:	6a 00                	push   0x0
  59e:	53                   	push   ebx
- 59f:	e8 fc ff ff ff       	  call 0x2aa46
+ 59f:	e8 fc ff ff ff       	  call -0x555b6
  5a4:	83 c4 10             	add    esp,0x10
  5a7:	e8 fc ff ff ff       	call   5a8 <__hook_dosFsDelete+0x38>
  5ac:	e8 fc ff ff ff       	call   5ad <__hook_dosFsDelete+0x3d>
@@ -545,7 +545,7 @@ Disassembly of section .text:
  5b4:	8b 50 08             	mov    edx,DWORD PTR [eax+0x8]
  5b7:	52                   	push   edx
  5b8:	53                   	push   ebx
- 5b9:	e8 fc ff ff ff       	 call 0x2ac5c
+ 5b9:	e8 fc ff ff ff       	 call -0x553a0
  5be:	83 c4 10             	add    esp,0x10
  5c1:	83 ec 04             	sub    esp,0x4
  5c4:	68 51 05 00 00       	push   0x551

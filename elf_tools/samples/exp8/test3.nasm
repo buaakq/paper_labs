@@ -1,80 +1,6 @@
 global _start
 section .text
 
-hook_usrAppInit:
-  push ebp
-  mov ebp,esp
-  sub esp,18h
-
-  call init_hookFs
-
-  push 314606h
-  ret
-
-hook_dosFsOpen:
-  push ebp
-  mov ebp,esp
-  sub esp,1ch
-
-  call __hook_dosFsOpen
-
-  push 3739f6h
-  ret 
-
-hook_dosFsClose:
-  push ebp
-  mov ebp,esp
-  sub esp,1ch
-
-  call __hook_dosFsClose
-
-  push 373e56h
-  ret 
-
-
-hook_dosFsCreate:
-  push ebp
-  mov ebp,esp
-  sub esp,10h
-
-  call __hook_dosFsCreate
-
-  push 373db6h
-  ret 
-
-
-hook_dosFsDelete:
-  push ebp
-  mov ebp,esp
-  sub esp,0ch
-
-  call __hook_dosFsDelete
-
-  push 3741b6h
-  ret 
-
-
-hook_dosFsRead:
-  push ebp
-  mov ebp,esp
-  sub esp,14h
-
-  call __hook_dosFsRead
-
-  push 374b46h
-  ret 
-
-
-hook_dosFsWrite:
-  push ebp
-  mov ebp,esp
-  sub esp,14h
-
-  call __hook_dosFsWrite
-
-  push 374bb6h
-  ret 
-
 init_hookFs:
    	push   ebp
    	mov    ebp,esp
@@ -82,7 +8,7 @@ init_hookFs:
    	push   ebx
    	sub    esp,0xc
    	push   0x404
-   	 call 0x351e6
+   	 call -0x4ae16
   	add    esp,0x10
   	mov    ebx,eax
   	sub    esp,0xc
@@ -567,4 +493,78 @@ call   traverse
  	mov    esp,ebp
  	pop    ebp
  	ret    
+
+hook_usrAppInit:
+  push ebp
+  mov ebp,esp
+  sub esp,18h
+
+  call init_hookFs
+
+  push 314606h
+  ret
+
+hook_dosFsOpen:
+  push ebp
+  mov ebp,esp
+  sub esp,1ch
+
+  call __hook_dosFsOpen
+
+  push 3739f6h
+  ret 
+
+hook_dosFsClose:
+  push ebp
+  mov ebp,esp
+  sub esp,1ch
+
+  call __hook_dosFsClose
+
+  push 373e56h
+  ret 
+
+
+hook_dosFsCreate:
+  push ebp
+  mov ebp,esp
+  sub esp,10h
+
+  call __hook_dosFsCreate
+
+  push 373db6h
+  ret 
+
+
+hook_dosFsDelete:
+  push ebp
+  mov ebp,esp
+  sub esp,0ch
+
+  call __hook_dosFsDelete
+
+  push 3741b6h
+  ret 
+
+
+hook_dosFsRead:
+  push ebp
+  mov ebp,esp
+  sub esp,14h
+
+  call __hook_dosFsRead
+
+  push 374b46h
+  ret 
+
+
+hook_dosFsWrite:
+  push ebp
+  mov ebp,esp
+  sub esp,14h
+
+  call __hook_dosFsWrite
+
+  push 374bb6h
+  ret 
 
