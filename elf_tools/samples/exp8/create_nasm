@@ -42,5 +42,5 @@ sed 's/0000.... <//g' /tmp/hookFs0.s | sed 's/>:/:/g' | sed 's/[0-9a-f]*:.\{22,2
 #sed  's/jns  /&0x/g' /tmp/test2.nasm  | sed 's/0x\s\s/  0x/g' > /tmp/test2.nasm
 
 
-cat $proxy_file /tmp/test2.nasm > $out_file
+cat  /tmp/test2.nasm $proxy_file  > $out_file
 
