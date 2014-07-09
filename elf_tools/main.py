@@ -13,8 +13,6 @@ from genshellcode import *
 def signal_handler(signal, frame):
     print '\nProgram Exit'
     sys.exit(0)
-
-# judge if the file is ELF
 def basicDiscovery(FILE):
     testBinary = open(FILE, 'rb')
     header = testBinary.read(4)
@@ -27,12 +25,7 @@ def basicDiscovery(FILE):
         'Only support ELF formats'
         return None
 
-
 MAGIC_PREFIX_INJECT="hook_"
-
-
-# main function
-
 def main():
     author = """\
          Author:    Feng,Li
@@ -74,9 +67,7 @@ def main():
                       action="store_true",
                       help="For debug information output.")
 
-
     (options, args) = parser.parse_args()
-
     if not options.FILE or (not options.SHELLCODE and \
         not options.OBJECT_FILE and not options.inject_nasm_file):
 
@@ -99,7 +90,6 @@ def main():
     """
     parse inject nasm file to a dict
     """
-
     if options.inject_nasm_file:
       '''
       1. compile the .nasm to .o
@@ -107,34 +97,14 @@ def main():
       3. fix the dict's key to our injection pointer
       eg: hook_FsOpen --->  FsOpen
       '''
-# 把nasm文件汇编成shellcode 
-       options.SHELLCODE = encode(compile_nasm_file(options.inject_nasm_file,"elf"))
-
-# a new .o file is created
-# inject_o file is the new .o file
+      options.SHELLCODE = encode(compile_nasm_file(options.inject_nasm_file,"elf"))
       inject_o = options.inject_nasm_file.replace(".nasm", ".o")
-
-# parse the .o file, get its data
-# 得到的inject_func是一个字典，他是这样的：
-'''
-1、第一层，只有一项，key是函数名；内容是一个字典
-
-2、第二层，即上面说的字典；有两项；第一个key是opcode；
-第二个key是offset 
-  opcode对应的内容是一个列表，元素是按顺序排列的每条指令的操作码
-  offset的内容是一个字符串，内容是该函数起始位置距离文件的
-偏移量。
-'''
       inject_funcs = parse_text_section(inject_o)
-
-#看函数名是否包含hook_，若包含的话，则把它重命名为不带
-#hook_的名字，即被劫持的函数名      
       for k in inject_funcs:
         if len(k) > 5 and k[0:5] == MAGIC_PREFIX_INJECT:
           inject_funcs[k[5:]] = inject_funcs.pop(k)
       print inject_funcs
 
-#解析vxworks文件，并把上面得到的shellcode注入进去。
     """
     parse elf and patch our shellcode to elf
     """
@@ -147,9 +117,6 @@ def main():
     print "[+] entry: {0:#x} inject_point: {1:#x} "\
       "base offset: {2:#x}".format(entry,inject_point,offset_base)
 
-#使用跟上面一样的方法，解析vxworks文件。
-#计算劫持函数的插入位置
-#在被劫持函数头插入push+ret
     """
     insert jump instrument at the beginning of patched elf
     1. disassemble elf to get a dict.
@@ -157,16 +124,11 @@ def main():
     3. inject a 'push xxxx\nret' to inject func point.
     """
     funcs = parse_text_section(options.OUTPUT)
-
-#遍历所有的劫持函数
     for k in inject_funcs:
       if not k in funcs:
         #print "[*] {0} not exist!".format(k)
         continue
-#得到被劫持函数的真实地址
       offset = int(funcs[k]['offset'],16)
-
-#得到插入函数的真实地址
       inject_offset = int(inject_funcs[k]['offset'],16)
       file_offset = offset - offset_base
       jmp_addr = inject_point + inject_offset
