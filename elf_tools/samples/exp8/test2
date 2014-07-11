@@ -140,7 +140,7 @@ Disassembly of section .text:
  171:	83 ec 08             	sub    esp,0x8
  174:	57                   	push   edi
  175:	53                   	push   ebx
- 176:	e8 fc ff ff ff       	call   177 <traverse+0x77>
+ 176:	e8 fc ff ff ff       	 call pathcmp
  17b:	83 c4 10             	add    esp,0x10
  17e:	85 c0                	test   eax,eax
  180:	0f 85 aa 00 00 00    	jne    230 <traverse+0x130>
@@ -257,7 +257,7 @@ Disassembly of section .text:
  2ba:	53                   	push   ebx
  2bb:	e8 fc ff ff ff       	 call -0x552d2
  2c0:	83 c4 10             	add    esp,0x10
- 2c3:	e8 fc ff ff ff       	call   2c4 <__hook_dosFsOpen+0x54>
+ 2c3:	e8 fc ff ff ff       	 call read_ebp
  2c8:	83 ec 08             	sub    esp,0x8
  2cb:	8b 00                	mov    eax,DWORD PTR [eax]
  2cd:	8b 50 10             	mov    edx,DWORD PTR [eax+0x10]
@@ -269,7 +269,7 @@ Disassembly of section .text:
  2dd:	68 5d 02 00 00       	push   0x25d
  2e2:	53                   	push   ebx
  2e3:	56                   	push   esi
- 2e4:	e8 fc ff ff ff       	call   2e5 <__hook_dosFsOpen+0x75>
+ 2e4:	e8 fc ff ff ff       	 call traverse
  2e9:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  2ef:	5b                   	pop    ebx
  2f0:	5e                   	pop    esi
@@ -308,7 +308,7 @@ Disassembly of section .text:
  33e:	53                   	push   ebx
  33f:	e8 fc ff ff ff       	  call -0x55356
  344:	83 c4 10             	add    esp,0x10
- 347:	e8 fc ff ff ff       	call   348 <__hook_dosFsCreate+0x38>
+ 347:	e8 fc ff ff ff       	 call read_ebp
  34c:	83 ec 08             	sub    esp,0x8
  34f:	8b 00                	mov    eax,DWORD PTR [eax]
  351:	8b 50 10             	mov    edx,DWORD PTR [eax+0x10]
@@ -320,7 +320,7 @@ Disassembly of section .text:
  361:	68 f5 02 00 00       	push   0x2f5
  366:	53                   	push   ebx
  367:	56                   	push   esi
- 368:	e8 fc ff ff ff       	call   369 <__hook_dosFsCreate+0x59>
+ 368:	e8 fc ff ff ff       	 call traverse
  36d:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  373:	5b                   	pop    ebx
  374:	5e                   	pop    esi
@@ -358,8 +358,8 @@ Disassembly of section .text:
  3bf:	56                   	push   esi
  3c0:	e8 fc ff ff ff       	 call -0x553d7
  3c5:	83 c4 10             	add    esp,0x10
- 3c8:	e8 fc ff ff ff       	call   3c9 <__hook_dosFsRead+0x39>
- 3cd:	e8 fc ff ff ff       	call   3ce <__hook_dosFsRead+0x3e>
+ 3c8:	e8 fc ff ff ff       	 call read_ebp
+ 3cd:	e8 fc ff ff ff       	 call read_ebp
  3d2:	83 ec 0c             	sub    esp,0xc
  3d5:	8b 58 08             	mov    ebx,DWORD PTR [eax+0x8]
  3d8:	53                   	push   ebx
@@ -377,7 +377,7 @@ Disassembly of section .text:
  3fb:	68 79 03 00 00       	push   0x379
  400:	56                   	push   esi
  401:	57                   	push   edi
- 402:	e8 fc ff ff ff       	call   403 <__hook_dosFsRead+0x73>
+ 402:	e8 fc ff ff ff       	 call traverse
  407:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  40d:	5b                   	pop    ebx
  40e:	5e                   	pop    esi
@@ -418,8 +418,8 @@ Disassembly of section .text:
  45f:	56                   	push   esi
  460:	e8 fc ff ff ff       	 call -0x55477
  465:	83 c4 10             	add    esp,0x10
- 468:	e8 fc ff ff ff       	call   469 <__hook_dosFsWrite+0x39>
- 46d:	e8 fc ff ff ff       	call   46e <__hook_dosFsWrite+0x3e>
+ 468:	e8 fc ff ff ff       	 call read_ebp
+ 46d:	e8 fc ff ff ff       	 call read_ebp
  472:	83 ec 0c             	sub    esp,0xc
  475:	8b 58 08             	mov    ebx,DWORD PTR [eax+0x8]
  478:	53                   	push   ebx
@@ -437,7 +437,7 @@ Disassembly of section .text:
  49b:	68 14 04 00 00       	push   0x414
  4a0:	56                   	push   esi
  4a1:	57                   	push   edi
- 4a2:	e8 fc ff ff ff       	call   4a3 <__hook_dosFsWrite+0x73>
+ 4a2:	e8 fc ff ff ff       	 call traverse
  4a7:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  4ad:	5b                   	pop    ebx
  4ae:	5e                   	pop    esi
@@ -479,7 +479,7 @@ Disassembly of section .text:
  4ff:	56                   	push   esi
  500:	e8 fc ff ff ff       	 call -0x55517
  505:	83 c4 10             	add    esp,0x10
- 508:	e8 fc ff ff ff       	call   509 <__hook_dosFsClose+0x39>
+ 508:	e8 fc ff ff ff       	 call read_ebp
  50d:	83 ec 0c             	sub    esp,0xc
  510:	8b 00                	mov    eax,DWORD PTR [eax]
  512:	8b 58 08             	mov    ebx,DWORD PTR [eax+0x8]
@@ -498,7 +498,7 @@ Disassembly of section .text:
  538:	68 b4 04 00 00       	push   0x4b4
  53d:	56                   	push   esi
  53e:	57                   	push   edi
- 53f:	e8 fc ff ff ff       	 call -0x4ae16
+ 53f:	e8 fc ff ff ff       	  call traverse
  544:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  54a:	5b                   	pop    ebx
  54b:	5e                   	pop    esi
@@ -539,8 +539,8 @@ Disassembly of section .text:
  59e:	53                   	push   ebx
  59f:	e8 fc ff ff ff       	  call -0x555b6
  5a4:	83 c4 10             	add    esp,0x10
- 5a7:	e8 fc ff ff ff       	call   5a8 <__hook_dosFsDelete+0x38>
- 5ac:	e8 fc ff ff ff       	call   5ad <__hook_dosFsDelete+0x3d>
+ 5a7:	e8 fc ff ff ff       	 call read_ebp
+ 5ac:	e8 fc ff ff ff       	 call read_ebp
  5b1:	83 ec 08             	sub    esp,0x8
  5b4:	8b 50 08             	mov    edx,DWORD PTR [eax+0x8]
  5b7:	52                   	push   edx
@@ -551,7 +551,7 @@ Disassembly of section .text:
  5c4:	68 51 05 00 00       	push   0x551
  5c9:	53                   	push   ebx
  5ca:	56                   	push   esi
- 5cb:	e8 fc ff ff ff       	call   5cc <__hook_dosFsDelete+0x5c>
+ 5cb:	e8 fc ff ff ff       	 call traverse
  5d0:	8d a5 e8 fb ff ff    	lea    esp,[ebp-0x418]
  5d6:	5b                   	pop    ebx
  5d7:	5e                   	pop    esi

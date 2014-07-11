@@ -14,15 +14,27 @@ def create_nasm(obj, rel, output):
     tmp = commands.getoutput("objdump -d -Mintel {0}".format(obj)).split('\n')
     #print tmp
     for k in rel:
-      rel_off = hex(k['rel_offset']-1)[2:]
-      rel_off = rel_off + ':'
-      #print rel_off
-      for t in tmp:
-        if (rel_off in t) and  ('fc ff ff ff' in t) and ('call' in t ):
-           index = tmp.index(t)
-           index_call = tmp[index].index('call')
-           tmp[index] = tmp[index][0:index_call] + ' call '+ hex(k['result']) 
-           #tmp[index] = "got it!"
+      if 'result' in k:
+        rel_off = hex(k['rel_offset']-1)[2:]
+        rel_off = rel_off + ':'
+        #print rel_off
+        for t in tmp:
+          if (rel_off in t) and  ('fc ff ff ff' in t) and ('call' in t ):
+             index = tmp.index(t)
+             index_call = tmp[index].index('call')
+             tmp[index] = tmp[index][0:index_call] + ' call '+ hex(k['result']) 
+          
+   #tmp[index] = "got it!"
+
+      if not 'result' in k: 
+        rel_off = hex(k['rel_offset']-1)[2:]
+        rel_off = rel_off + ':'
+        for t in tmp:
+          if (rel_off in t) and  ('fc ff ff ff' in t) and ('call' in t ):
+            index = tmp.index(t)
+            index_call = tmp[index].index('call')
+            tmp[index] = tmp[index][0:index_call] + ' call '+ k['sym_name']
+    
     f = open(output, "w")
     sep = '\n'
     text = sep.join(tmp)
@@ -36,21 +48,24 @@ def get_complement(x):
 
 def relocate(obj,vxworks):
     rel = get_relocate_text(obj)
-    sym_table = get_symtab_text(obj)
+    print rel
+    sym_table = get_symtab_text(obj)    
     rel = modify_rel_table(rel,sym_table)
+    print rel
     func = parse_text_section(obj)
     rel = get_func_addr(rel,func)
     rel = get_sym_addr(rel,vxworks)
     print rel
     for k in rel:
-      k['result'] = + k['sym_addr'] - k['rel_addr']
-      k['result_hex_complement']=get_complement(k['result'])  
-      k.pop('sym_addr')
-      k.pop('rel_addr')
-      #k.pop('result')
-      k.pop('offset2func')
-      k.pop('sym_name')
-      k.pop('func_name')
+      if k.has_key('sym_addr'):
+        k['result'] = + k['sym_addr'] - k['rel_addr']
+        k['result_hex_complement']=get_complement(k['result'])  
+        k.pop('sym_addr')
+        k.pop('rel_addr')
+        #k.pop('result')
+        k.pop('offset2func')
+        #k.pop('sym_name')
+        k.pop('func_name')
     return rel 
 
 def get_sym_addr(rel,vxworks):
@@ -96,7 +111,7 @@ def get_relocate_text(obj):
       if t == '': 
         break
       if not t.split()[4].startswith('.'):
-        if t.split()[3] == '00000000':
+        if t.split()[2] == 'R_386_PC32':
           item = {}
           item['rel_offset'] = int(t.split()[0],16)
           item['sym_name'] = t.split()[4]
