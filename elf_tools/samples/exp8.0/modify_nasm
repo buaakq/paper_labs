@@ -3,13 +3,13 @@
 if [ $# -lt 3 ] ; then
     cat << EOF
 NAME:
-  modify_nasm   ----  反汇编hookFs.o 修整格式并生成合适的nasm文件
+  modify_nasm   ---- 修整格式并生成合适的nasm文件
 
 SYNOPSIS:
-  modify_nasm -f o_file -p proxy_file -o output_file   
+  modify_nasm -f s_file -p proxy_file -o output_file   
 
 OPTIONS:
-    -f    ------   the path of hookFs.o file
+    -f    ------   the path of assembly file
     -o    ------   the file name of the output_file
     -p    ------   the path of the proxy nasm file
 
@@ -41,6 +41,7 @@ sed 's/0000.... <//g' /tmp/hookFs0.s | sed 's/>:/:/g' | sed 's/[0-9a-f]*:.\{22,2
 
 #sed  's/jns  /&0x/g' /tmp/test2.nasm  | sed 's/0x\s\s/  0x/g' > /tmp/test2.nasm
 
+echo -e "global _start\nsection .text" > /tmp/header
 
-cat  /tmp/test2.nasm $proxy_file  > $out_file
+cat /tmp/header /tmp/test2.nasm $proxy_file  > $out_file
 

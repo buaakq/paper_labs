@@ -13,7 +13,7 @@ open_printf:
   	mov    BYTE[ebp-0x4],0xa
   	mov    BYTE[ebp-0x3],0x0
   	push   eax
-  	 call -0x5162c
+  	call   0x26 
   	mov    esp,ebp
   	pop    ebp
   	ret    
@@ -31,7 +31,7 @@ close_printf:
   	mov    BYTE[ebp-0x4],0xa
   	mov    BYTE[ebp-0x3],0x0
   	push   eax
-  	 call -0x5165a
+  	call   0x56 
   	mov    esp,ebp
   	pop    ebp
   	ret    
@@ -40,7 +40,7 @@ __hook_dosFsOpen:
   	push   ebp
   	mov    ebp,esp
   	sub    esp,0x8
-  	 call open_printf
+  	call   0x67 
   	mov    esp,ebp
   	pop    ebp
   	ret    
@@ -49,7 +49,7 @@ __hook_dosFsClose:
   	push   ebp
   	mov    ebp,esp
   	sub    esp,0x8
-  	 call close_printf
+  	call   0x77 
   	mov    esp,ebp
   	pop    ebp
   	ret    
@@ -67,7 +67,7 @@ __hook_dosFsRead:
   	mov    BYTE[ebp-0x4],0xa
   	mov    BYTE[ebp-0x3],0x0
   	push   eax
-  	 call -0x516a6
+  	call   0xa6 
   	mov    esp,ebp
   	pop    ebp
   	ret    
@@ -85,7 +85,7 @@ __hook_dosFsWrite:
   	mov    BYTE[ebp-0x4],0xa
   	mov    BYTE[ebp-0x3],0x0
   	push   eax
-  	 call -0x516d4
+  	call   0xd6 
   	mov    esp,ebp
   	pop    ebp
   	ret    

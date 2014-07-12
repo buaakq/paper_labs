@@ -41,8 +41,8 @@ __hook_dosFsOpen:
   push   ecx
   push   eax
 
-  ;mov eax,384b80h
-  call printf
+  mov eax,384b80h
+  call eax
 
   mov    esp,ebp
   pop    ebp

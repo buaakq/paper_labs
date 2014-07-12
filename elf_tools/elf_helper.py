@@ -61,9 +61,6 @@ def parse_text_section(obj):
 
 
     out = commands.getoutput("objdump -d {0}".format(obj)).split('\n')[6:]
-
-#    print out
-
     funcs = []
     func = {}
     (func['offset'],func['name']) = get_func_title(out[0])
@@ -177,4 +174,3 @@ if __name__ == '__main__':
         print "{0}->{1:#x}\n".format(s['offset'],addr)
         write_elf(src,output,text_base + s['offset'],addr)
         src=output
-
