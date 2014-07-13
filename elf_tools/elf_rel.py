@@ -46,13 +46,13 @@ def get_complement(x):
     y = hex((eval("0b"+str(int(bin(x)[3:].zfill(4).replace("0","2").replace("1","0").replace("2","1"))))+eval("0b1")))[2:].zfill(4)
     return y
 
-def relocate(obj,vxworks):
+def relocate(obj,vxworks,sss):
     rel = get_relocate_text(obj)
     print rel
     sym_table = get_symtab_text(obj)    
     rel = modify_rel_table(rel,sym_table)
     print rel
-    func = parse_text_section(obj)
+    func = parse_text_section(sss)
     rel = get_func_addr(rel,func)
     rel = get_sym_addr(rel,vxworks)
     print rel
@@ -142,6 +142,11 @@ def main():
          action="store",
          help="Get text section and add it to out file")
     
+    parser.add_option("-j", "--file2", default=False,
+         dest="SSS_FILE", 
+         action="store",
+         help="sssGet text section and add it to out file")
+    
     parser.add_option("-f","--file",dest="FILE",
          action="store", type="string")
     
@@ -161,7 +166,7 @@ def main():
        options.OUTPUT = options.OBJECT_FILE[:-2] + '.rel'
 
     # get a dict, including where to relocate and the value to put in
-    rel_table = relocate(options.OBJECT_FILE,options.FILE)
+    rel_table = relocate(options.OBJECT_FILE,options.FILE,options.SSS_FILE)
     # create the assembly file, default name is *.rel
     create_nasm(
        options.OBJECT_FILE,

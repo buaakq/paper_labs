@@ -1,0 +1,51 @@
+
+hookFs_simple2.o:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+00000000 <read_ebp>:
+   0:	55                   	push   ebp
+   1:	89 e5                	mov    ebp,esp
+   3:	89 e8                	mov    eax,ebp
+   5:	89 ec                	mov    esp,ebp
+   7:	5d                   	pop    ebp
+   8:	c3                   	ret    
+   9:	8d b4 26 00 00 00 00 	lea    esi,[esi+eiz*1+0x0]
+
+00000010 <__hook_dosFsOpen>:
+  10:	55                   	push   ebp
+  11:	89 e5                	mov    ebp,esp
+  13:	83 ec 18             	sub    esp,0x18
+  16:	8d 45 f8             	lea    eax,[ebp-0x8]
+  19:	83 ec 0c             	sub    esp,0xc
+  1c:	c6 45 f8 6f          	mov    BYTE PTR [ebp-0x8],0x6f
+  20:	c6 45 f9 70          	mov    BYTE PTR [ebp-0x7],0x70
+  24:	c6 45 fa 65          	mov    BYTE PTR [ebp-0x6],0x65
+  28:	c6 45 fb 6e          	mov    BYTE PTR [ebp-0x5],0x6e
+  2c:	c6 45 fc 0a          	mov    BYTE PTR [ebp-0x4],0xa
+  30:	c6 45 fd 00          	mov    BYTE PTR [ebp-0x3],0x0
+  34:	50                   	push   eax
+  35:	e8 fc ff ff ff       	 call -0x51639
+  3a:	89 ec                	mov    esp,ebp
+  3c:	5d                   	pop    ebp
+  3d:	c3                   	ret    
+  3e:	89 f6                	mov    esi,esi
+
+00000040 <__hook_dosFsRead>:
+  40:	55                   	push   ebp
+  41:	89 e5                	mov    ebp,esp
+  43:	83 ec 18             	sub    esp,0x18
+  46:	8d 45 f8             	lea    eax,[ebp-0x8]
+  49:	83 ec 0c             	sub    esp,0xc
+  4c:	c6 45 f8 72          	mov    BYTE PTR [ebp-0x8],0x72
+  50:	c6 45 f9 65          	mov    BYTE PTR [ebp-0x7],0x65
+  54:	c6 45 fa 61          	mov    BYTE PTR [ebp-0x6],0x61
+  58:	c6 45 fb 64          	mov    BYTE PTR [ebp-0x5],0x64
+  5c:	c6 45 fc 0a          	mov    BYTE PTR [ebp-0x4],0xa
+  60:	c6 45 fd 00          	mov    BYTE PTR [ebp-0x3],0x0
+  64:	50                   	push   eax
+  65:	e8 fc ff ff ff       	 call -0x51667
+  6a:	89 ec                	mov    esp,ebp
+  6c:	5d                   	pop    ebp
+  6d:	c3                   	ret    
